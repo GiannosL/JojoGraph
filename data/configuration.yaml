@@ -1,0 +1,35 @@
+part_1: 
+  characters: 'data/phantom-blood/characters.csv'
+  interactions: 'data/phantom-blood/interactions.csv'
+
+part_2:
+  characters: 'data/battle-tendency/characters.csv'
+  interactions: 'data/battle-tendency/interactions.csv'
+
+part_3:
+  characters: 'data/stardust-crusaders/characters.csv'
+  interactions: 'data/stardust-crusaders/interactions.csv'
+
+part_4:
+  characters: ''
+  interactions: ''
+
+part_5:
+  characters: ''
+  interactions: ''
+
+part_6:
+  characters: ''
+  interactions: ''
+
+part_7:
+  characters: ''
+  interactions: ''
+
+part_8:
+  characters: ''
+  interactions: ''
+
+part_9:
+  characters: ''
+  interactions: ''
