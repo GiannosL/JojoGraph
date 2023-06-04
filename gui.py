@@ -1,21 +1,9 @@
 import streamlit as st
+
+from source import JOJO_PART_NAMES
 from source.data.relations import get_relations
 from source.data.configuration import parse_configuration
 
-
-# Jojo parts
-JOJO_PART_NAMES = {
-    'Phantom blood': 'part_1', 
-    'Battle tendency': 'part_2', 
-    'Stardust crusaders': 'part_3',
-    'Diamond is unbreakable': 'part_4', 
-    'Golden wind': 'part_5', 
-    'Stone ocean': 'part_6',
-    'Steel ball run': 'part_7', 
-    'Jojolion': 'part_8', 
-    'The Jojolands': 'part_9', 
-    '': None
-    }
 
 # grab configuration file
 config = parse_configuration(filename='data/configuration.yaml')
@@ -24,7 +12,8 @@ config = parse_configuration(filename='data/configuration.yaml')
 st.set_page_config(page_title="Jojo\'s bizarre adventure", layout="wide")
 
 # select which season to plot
-jojo_part = st.selectbox(
+_, col2, _ = st.columns([1, 3, 1])
+jojo_part = col2.selectbox(
     label='Select Jojo part', 
     options=JOJO_PART_NAMES.keys(), 
     index=(len(JOJO_PART_NAMES)-1)
