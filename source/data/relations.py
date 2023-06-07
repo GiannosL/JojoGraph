@@ -1,6 +1,6 @@
 import networkx as nx
 import plotly.graph_objects as go
-from source.utilities.util_functions import validate_path, parse_characters, parse_interactions, parse_colors
+from source.utilities.util_functions import validate_path, parse_characters, parse_interactions, parse_colors, get_image_names
 import re
 import os
 
@@ -30,8 +30,7 @@ class Relations:
         yVals = fig['data'][1]['y']
         names = fig['data'][1]['text']
 
-        images=os.listdir('data/node_pictures/')
-        character_images_names=[x.split('.jpeg')[0] for x in images]
+        character_images_names= get_image_names()
 
         for i in range(0, len(xVals)):  
 
