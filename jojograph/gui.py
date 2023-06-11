@@ -6,7 +6,7 @@ from source.data.configuration import parse_configuration
 
 
 # grab configuration file
-config = parse_configuration(filename='data/configuration.yaml')
+config = parse_configuration(filename='jojograph/data/configuration.yaml')
 
 #
 st.set_page_config(page_title="Jojo\'s bizarre adventure", layout="wide")

@@ -1,6 +1,6 @@
 part_1: 
-  characters: 'data/phantom-blood/characters.csv'
-  interactions: 'data/phantom-blood/interactions.csv'
+  characters: 'jojograph/data/phantom-blood/characters.csv'
+  interactions: 'jojograph/data/phantom-blood/interactions.csv'
 
 part_2:
   characters: 'data/battle-tendency/characters.csv'

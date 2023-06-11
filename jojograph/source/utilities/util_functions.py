@@ -50,7 +50,7 @@ def parse_characters(my_file):
     return character_dict
 
 
-def parse_colors(my_file='data/colors/color_map.csv'):
+def parse_colors(my_file='jojograph/data/colors/color_map.csv'):
     """
     doc
     """
