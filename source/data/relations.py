@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from source.utilities.util_functions import validate_path, parse_characters, parse_interactions, parse_colors, get_image_names
 import re
 import os
+from PIL import Image
 
 class Relations:
     def __init__(self, interaction_list, interaction_types, 
@@ -40,6 +41,8 @@ class Relations:
       
             if name in character_images_names:
                 picture = 'data/node_pictures/' + name + ".jpeg"
+                picture= Image.open(picture)
+                
                 fig.add_layout_image(dict(
                 source=picture,
                 x=xVals[i],
