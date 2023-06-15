@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+import os
 
 
 def validate_path(filename):
@@ -62,3 +63,9 @@ def parse_colors(my_file='data/colors/color_map.csv'):
         my_dict[categories[i]] = colors[i]
     
     return my_dict
+
+def get_image_names() -> list:
+    images=os.listdir('data/node_pictures/')
+    character_images_names=[x.split('.jpeg')[0] for x in images]
+    return character_images_names
+

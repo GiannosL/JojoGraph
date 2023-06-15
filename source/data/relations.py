@@ -1,7 +1,9 @@
 import networkx as nx
 import plotly.graph_objects as go
-from source.utilities.util_functions import validate_path, parse_characters, parse_interactions, parse_colors
-
+from source.utilities.util_functions import validate_path, parse_characters, parse_interactions, parse_colors, get_image_names
+import re
+import os
+from PIL import Image
 
 class Relations:
     def __init__(self, interaction_list, interaction_types, 
@@ -22,6 +24,38 @@ class Relations:
     
     def get_edges(self):
         return self.graph
+    
+    def _add_images(self, fig):
+        # TODO make own class for plot
+        xVals = fig['data'][1]['x']
+        yVals = fig['data'][1]['y']
+        names = fig['data'][1]['text']
+
+        character_images_names= get_image_names()
+
+        for i in range(0, len(xVals)):  
+
+            pattern = r'Name: (.*?)<br>'
+            match = re.search(pattern, names[i])
+            name = match.group(1) 
+      
+            if name in character_images_names:
+                picture = 'data/node_pictures/' + name + ".jpeg"
+                picture= Image.open(picture)
+                
+                fig.add_layout_image(dict(
+                source=picture,
+                x=xVals[i],
+                y=yVals[i],
+                xref="x",
+                yref="y",
+                sizex=0.1,
+                sizey=0.1,
+                opacity=0.5,
+                layer="below"
+            ))
+        return fig
+        
     
     def get_plot(self):
         #
@@ -65,6 +99,8 @@ class Relations:
             data=[ edge_scatter, node_scatter],
             layout=lay
         )
+
+        fig = self._add_images(fig=fig)
         
         return fig
 
