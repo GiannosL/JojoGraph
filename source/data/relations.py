@@ -40,7 +40,7 @@ class Relations:
             name = match.group(1) 
       
             if name in character_images_names:
-                picture = 'data/node_pictures/' + name + ".jpeg"
+                picture = 'data/node-images/' + name + ".jpeg"
                 picture= Image.open(picture)
                 
                 fig.add_layout_image(dict(

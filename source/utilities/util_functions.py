@@ -65,7 +65,7 @@ def parse_colors(my_file='data/colors/color_map.csv'):
     return my_dict
 
 def get_image_names() -> list:
-    images=os.listdir('data/node_pictures/')
+    images=os.listdir('data/node-images/')
     character_images_names=[x.split('.jpeg')[0] for x in images]
     return character_images_names
 
